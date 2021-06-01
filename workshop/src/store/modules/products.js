@@ -8,7 +8,7 @@ const state ={
 
 const getters={
     getProduct:state=>{
-        if(state.query_search=="")
+        if(state.query_search==="")
         {   
            
             return state.listProduct
@@ -20,7 +20,7 @@ const getters={
             state.listProduct.map(product=>{
                 // let productName =
                 let index=product.productName.toUpperCase().search(!isNaN(state.query_search)?state.query_search:state.query_search.toUpperCase())
-                if(index>=0|product.id==1)
+                if(index>=0 || product.id===1)
                 {
                     products.push(product)
                 }

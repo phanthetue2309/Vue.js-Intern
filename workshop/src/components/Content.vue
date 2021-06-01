@@ -14,7 +14,7 @@
       <div class="component-price-Add-button">
              <p class="product-price">{{product.price}} VNĐ</p>
              <button class="btn btn-primary"
-            @click="addProductTocart(product)"
+            @click="addProductToCart(product)"
              >Add To Cart</button>
         </div>
     </div>
@@ -24,8 +24,8 @@
 
 <script>
 import axios from 'axios';
-
 import { mapActions, mapGetters } from "vuex";
+
 export default {
   data() {
     return {
@@ -35,7 +35,7 @@ export default {
   created() {
     this.getListProduct();
     this.delete_search();
-     this.testApi();
+    this.testApi();
     
      
   },
@@ -43,15 +43,12 @@ export default {
     ...mapGetters(["getProduct"]),
   },
   methods: {
-    ...mapActions(["getListProduct","addProductTocart","delete_search"]),
+    ...mapActions(["getListProduct","addProductToCart","delete_search"]),
    async testApi(){
 
      await axios.get("http://127.0.0.1:90/api/category/").
       then(response=>{
         console.log(response)
-
-        
-        
       }).catch(e=>{
         console.log(e)
       })

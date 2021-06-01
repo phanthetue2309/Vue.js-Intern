@@ -13,7 +13,7 @@ const getters={
         return amount
     },
     getCartList: state => {
-        console.log("Danh sách Cart")
+        console.log("List Cart")
         console.log(state.carts)
         return state.carts
     },
@@ -30,17 +30,8 @@ const getters={
 }
 
 const actions={
-    // binary_seach(state,product)
-    // {   
-    //     left=0
-    //     right =state.cart.lenght
-    //     for(i=left;i<right;i++)
-    //     {   
 
-
-    //     }
-    // }
-    addProductTocart({commit},obj)
+    addProductToCart({commit},obj)
     {
         commit('ADD_TO_CART',obj)
     },

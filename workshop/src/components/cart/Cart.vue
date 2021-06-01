@@ -1,10 +1,10 @@
 <template>
   <div class="cart-component">
     <div class="order-info">
-      <Cart-Item-Detail v-if="getCartList().length > 0" :product="product" />
+      <CartItemDetail v-if="getCartList().length > 0" :product="product" />
     </div>
     <div>
-      <p>Tổng Tiền:{{ count_total_cart }} VNĐ</p>
+      <p>Total Money:{{ count_total_cart }} VNĐ</p>
       <div class="cart-item">
         <table class="table table-cart-list">
           <thead class="thead-dark">
@@ -13,8 +13,8 @@
               <th scope="col">Image</th>
               <th scope="col">ProductName</th>
               <th scope="col">Price</th>
-              <th scope="col">Số Lượng</th>
-              <th scope="col">Thành Tiền</th>
+              <th scope="col">Count</th>
+              <th scope="col">Total Price</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -30,15 +30,15 @@
             <tr>
               <td></td>
               <td></td>
-              <td>Tổng Tiền</td>
+              <td>Total Money</td>
               <td colspan="2">{{ count_total_cart }} VNĐ</td>
               <td></td>
               <td></td>
             </tr>
           </tbody>
-          <tbody v-else style="margin:outo">
-            <div class="alert alert-warning containner" role="alert">
-              <p style="margin:auto">Ban Chưa Có Mặt Hàng Nào</p>
+          <tbody v-else style="margin:auto">
+            <div class="alert alert-warning container" role="alert">
+              <p style="margin:auto">You did not have any cart</p>
             </div>
           </tbody>
         </table>
